@@ -1,0 +1,13 @@
+Create Table ADMINInputs(
+REFERENCEID Number(20),
+APPROVAL Varchar2(10),
+ACCOUNT_NO Varchar2(25),
+ADMIN_REMARKS Varchar(50)
+);
+
+INSERT INTO Admininputs VALUES(101,'yes','11002626001','Verified');
+INSERT INTO Admininputs VALUES(102,'yes','11002626002','Verified');
+INSERT INTO Admininputs VALUES(103,'yes','11002626003','Verified');
+INSERT INTO Admininputs VALUES(104,'yes','11002626004','Verified');
+INSERT INTO Admininputs VALUES(105,'No','NA','Lack of Documents');
+INSERT INTO Admininputs VALUES(106,'NA','NA','Verification pending');

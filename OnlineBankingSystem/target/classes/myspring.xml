@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- a java class is known as bean 
+	  and in microsoft  a class is a component -->
+	
+	
+	
+<!-- 	C
+	B
+	A
+1	DataSource ds =new SpringDataSourceManager();
+2	FlightRepositoryImpl fi = new xml.FlightRepositoryImpl();
+3	fi.setDataSource(ds);
+4	fi.getAvailableFlights();
+	
+1	FlightRepositoryImpl fi = container.getBean("someid") ;
+2	List flightList = fi.getAvailableFlights();
+ -->	
+
+	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@DESKTOP-NTN41DQ:1521:OSE" />
+		<property name="username" value="system" />
+		<property name="password" value="Nitish123" />
+	</bean> 
+	
+	<bean id="AdminRepo" class="xml.AdminRepositoryImpl">
+		<property name="dataSource" ref="ds"></property> <!-- invoke setDataSource() -->
+	</bean>
+	
+	<!--<bean id="flightRepo" class="xml.FlightRepositoryImpl">
+		<property name="dataSource" ref="ds"></property>  invoke setDataSource() 
+	</bean>-->
+	
+	<!--  <bean id="mySavObj" class="bank.SavingsAccount">
+	</bean>
+	
+	<bean id="mycar" class="carshowroom.Car">
+		<constructor-arg ref="myengine"> </constructor-arg>
+	</bean>
+	-->
+	<!-- 
+	<bean id="myengine1" class="carfactory.PetrolEngine">
+		<constructor-arg ref="mypiston"> </constructor-arg>
+	</bean>
+	
+	<bean id="myengine2" class="carfactory.HybridEngine">
+		<constructor-arg ref="mypiston"> </constructor-arg>
+	</bean>
+	
+	<bean id="myengine3" class="carfactory.DieselEngine">
+		<constructor-arg ref="mypiston"> </constructor-arg>
+	</bean> -->
+	<!--
+	<bean id="myengine" class="carfactory.Engine">
+		<constructor-arg ref="mypiston"> </constructor-arg>
+	</bean>
+	
+	<bean id="mypiston" class="pistonunitfactory.Piston">
+		<constructor-arg ref="mycyl"></constructor-arg>
+	</bean>
+	
+	<bean id="mycyl" class="carcylinderfactory.Cylinder">
+		<constructor-arg value="20" type="int"></constructor-arg>
+	</bean>
+	-->
+</beans>
+
+	
